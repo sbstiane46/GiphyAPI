@@ -11,33 +11,51 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript">
     
-    //event listener for car search when pressing button
-    $("#car-button").on("click", function() {
+        //event listener for car search when pressing button
+        $("#car-button").on("click", function() {
         
-    //git API URL for cars 
-    var queryURL = "https://api.giphy.com/v1/gifs/random?api_key=vm0g1wNMtZXmWNnXM7jq8y79HaQNWKVJ&tag=cars";
+        //git API URL for cars 
+        var queryURL = "https://api.giphy.com/v1/gifs/random?api_key=vm0g1wNMtZXmWNnXM7jq8y79HaQNWKVJ&tag=cars";
 
-    //AJAX GET
-    $.ajax({
-        url: queryURL,
-        method: "GET"
-    })
+        //AJAX GET
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+        })
 
-    //return request
-    .then(function(response) {
+        //return request
+        .then(function(response) {
 
-    //response data and stores
-      var imageUrl = response.data.image_original_url; 
+        //response data and stores
+        var imageUrl = response.data.image_original_url; 
 
-    //creating and storing images
+        //creating and storing images
         var carImage = $("<img>");
 
         carImage.attr("src", imageUrl);
         carImage.attr("alt", "car image");
 
         $("#images").prepend(carImage);
+        });
+
+        
+
+        //$(".gif").on("click", function() {
+            //var state = $(this).attr("data-state");
+
+        //var state = $(this).attr("data-state");
+        //if (state === "animate") {
+        //$(this).attr("src", $(this).attr("data-animate"));
+        //$(this).attr("data-state", "animate");
+        //} 
+        //else {
+        //$(this).attr("src", $(this).attr("data-still"));
+        //$(this).attr("data-state", "still");
+        //} 
+        
+         
     });
-});
-</script>
+     </script>
 </body>
+
 </html>
