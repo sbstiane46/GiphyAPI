@@ -5,16 +5,16 @@
     <title>Car Search</title>
 </head>
 <body>
-        <button id="car-button">Look Up Cars!</button>
-        <div id="images">
-        </div>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script type="text/javascript">
+    <button id="car-button">Look Up Cars!</button>
+    <div id="images">
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript">
     
     //event listener for car search when pressing button
     $("#car-button").on("click", function() {
         
-    //git API URL for cars vm0g1wNMtZXmWNnXM7jq8y79HaQNWKVJ
+    //git API URL for cars 
     var queryURL = "https://api.giphy.com/v1/gifs/random?api_key=vm0g1wNMtZXmWNnXM7jq8y79HaQNWKVJ&tag=cars";
 
     //AJAX GET
@@ -32,7 +32,12 @@
     //creating and storing images
         var carImages = $("<img>");
 
-    //
-    })
+        carImages.attr("src", imageUrl);
+        carImage.attr("alt", "car image");
+
+        $("#images").prepend(carImages);
+    });
+});
+</script>
 </body>
 </html>
