@@ -21,7 +21,7 @@
     $.ajax({
         url: queryURL,
         method: "GET"
-        })
+    })
 
     //return request
     .then(function(response) {
@@ -30,12 +30,12 @@
       var imageUrl = response.data.image_original_url; 
 
     //creating and storing images
-        var carImages = $("<img>");
+        var carImage = $("<img>");
 
-        carImages.attr("src", imageUrl);
+        carImage.attr("src", imageUrl);
         carImage.attr("alt", "car image");
 
-        $("#images").prepend(carImages);
+        $("#images").prepend(carImage);
     });
 });
 </script>
